@@ -1,0 +1,7 @@
+# Dependencias del Simulador Mecanismo Theo Jansen
+# Python 3.10+
+
+PyQt6>=6.6.0
+matplotlib>=3.8.0
+numpy>=1.24.0
+scipy>=1.11.0
