@@ -1254,7 +1254,7 @@ Se generaron planos de fabricación con:
 
 \subsection{Consolidación de Resultados Cinemáticos y Cinéticos}
 
-Las simulaciones en MATLAB proporcionaron datos completos del comportamiento del mecanismo durante un ciclo completo de operación (360° de rotación de la manivela).
+Las simulaciones en MATLAB proporcionaron datos completos del comportamiento del mecanismo de 8 patas durante un ciclo completo de operación (360° de rotación de la manivela).
 
 \subsubsection{Parámetros de Simulación}
 
@@ -1265,11 +1265,14 @@ Las simulaciones en MATLAB proporcionaron datos completos del comportamiento del
 \hline
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
-Velocidad angular de entrada ($\omega_2$) & 2$\pi$ rad/s (1 Hz) \\
+Velocidad angular de entrada ($\omega_2$) & 1.0 rad/s \\
 Aceleración angular de entrada ($\alpha_2$) & 0 rad/s² (constante) \\
+Número de patas & 8 \\
+Desfase angular entre patas & 45° \\
 Paso angular de simulación & 1° (360 puntos) \\
 Tolerancia de convergencia & $10^{-6}$ \\
-Gravedad & 9.81 m/s² \\
+Masa total & 300 g \\
+Gravedad & 981 cm/s² \\
 \hline
 \end{tabular}
 \end{table}
@@ -1280,8 +1283,8 @@ Gravedad & 9.81 m/s² \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_trayectoria_completa.png}
-\caption{Trayectoria completa del pie durante un ciclo. La línea gruesa inferior representa la fase de apoyo (contacto con suelo), mientras el arco superior muestra la fase de balanceo.}
+\includegraphics[width=0.45\textwidth]{figures/trayectoria_completa_8patas.png}
+\caption{Trayectorias completas de los 8 pies durante un ciclo. Cada pata sigue una trayectoria similar pero desfasada 45°.}
 \label{fig:sim_trayectoria}
 \end{figure}
 
@@ -1294,57 +1297,57 @@ Características de la trayectoria obtenida:
 \hline
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
-Longitud de paso & 24.8 cm \\
-Altura máxima de elevación & 8.2 cm \\
-Desviación vertical en apoyo & $\pm$ 0.4 cm \\
-Ángulo de apoyo & 198° (55\% del ciclo) \\
-Ángulo de balanceo & 162° (45\% del ciclo) \\
+Rango horizontal (X) & 4.84 - 7.04 cm \\
+Rango vertical (Y) & -5.51 - -2.35 cm \\
+Longitud de paso aproximada & 2.2 cm \\
+Altura de elevación & 3.16 cm \\
+Fase de apoyo & 75\% del ciclo \\
+Número de patas en contacto & 4-6 (dependiendo del ángulo) \\
 \hline
 \end{tabular}
 \end{table}
-
-La desviación vertical de ±0.4 cm durante la fase de apoyo es aceptable, representando solo 1.6\% de la altura de paso.
 
 \subsubsection{Velocidad Horizontal del Pie}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_velocidad_horizontal.png}
-\caption{Velocidad horizontal del pie en función del ángulo de la manivela. Durante la fase de apoyo (zona sombreada), la velocidad es aproximadamente constante a 0.78 m/s.}
+\includegraphics[width=0.45\textwidth]{figures/velocidad_horizontal_8patas.png}
+\caption{Velocidad horizontal de los 8 pies. Las velocidades alcanzan picos de 94.25 cm/s durante fases de balanceo.}
 \label{fig:sim_vel_horizontal}
 \end{figure}
 
-La velocidad promedio del mecanismo se calcula como:
-
-\begin{equation}
-v_{promedio} = \frac{Longitud_{paso}}{Tiempo_{ciclo}} = \frac{0.248 \text{ m}}{1 \text{ s}} = 0.248 \text{ m/s} = 24.8 \text{ cm/s}
-\end{equation}
+Velocidades características:
+\begin{itemize}
+\item Velocidad máxima: 94.25 cm/s
+\item Velocidad mínima: 0 cm/s (contacto con suelo)
+\item Velocidad promedio de avance: 23.56 cm/s
+\end{itemize}
 
 \subsubsection{Velocidad Vertical del Pie}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_velocidad_vertical.png}
-\caption{Velocidad vertical del pie. Durante la fase de apoyo, $v_y \approx 0$, confirmando contacto estable con el suelo. Los picos corresponden a la elevación y descenso rápido durante el balanceo.}
+\includegraphics[width=0.45\textwidth]{figures/velocidad_vertical_8patas.png}
+\caption{Velocidad vertical de los 8 pies. Durante la fase de apoyo, $v_y \approx 0$ para contacto estable.}
 \label{fig:sim_vel_vertical}
 \end{figure}
 
 \subsection{Análisis de Aceleraciones}
 
-\subsubsection{Aceleración del Centro de Masa del Mecanismo}
+\subsubsection{Aceleración del Punto de Contacto G}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_aceleracion_cg.png}
-\caption{Aceleración del centro de masa del mecanismo completo. Las oscilaciones son características del movimiento periódico de sistemas articulados.}
+\includegraphics[width=0.45\textwidth]{figures/aceleracion_pie_8patas.png}
+\caption{Aceleraciones de los 8 pies. Los picos de 39,552 cm/s² ocurren durante transiciones de fase.}
 \label{fig:sim_acel_cg}
 \end{figure}
 
-Valores extremos:
+Valores extremos de aceleración:
 \begin{itemize}
-\item Aceleración horizontal máxima: 3.2 m/s²
-\item Aceleración vertical máxima: 4.1 m/s²
-\item Aceleración total máxima: 5.2 m/s² (0.53g)
+\item Aceleración máxima: 39,552 cm/s²
+\item Aceleración mínima: -39,552 cm/s²
+\item Aceleraciones críticas durante cambios de fase de movimiento
 \end{itemize}
 
 \subsection{Resultados del Análisis Dinámico}
