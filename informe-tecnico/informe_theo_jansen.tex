@@ -537,7 +537,7 @@ La simulación genera la trayectoria del punto de contacto G para todas las pata
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{simulacion.png.jpg}
+\includegraphics[width=\columnwidth]{simulacion.png.jpg}
 \caption{Simulación interactiva del mecanismo Theo Jansen mostrando la trayectoria del punto G. Desarrollado en Python con Matplotlib para visualización en tiempo real.}
 \label{fig:simulacion}
 \end{figure}
@@ -548,7 +548,7 @@ La simulación genera la trayectoria del punto de contacto G para todas las pata
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Trayectoria_de_las_8_palas_desfase_45.jpg}
+\includegraphics[width=\columnwidth]{Trayectoria_de_las_8_palas_desfase_45.jpg}
 \caption{Trayectorias de las 8 patas durante un ciclo completo. Cada pata tiene un desfase de 45° para distribución uniforme de carga.}
 \label{fig:trayectoria}
 \end{figure}
@@ -567,7 +567,7 @@ Características de la trayectoria (valores representativos):
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Velocidad_Lineal_del_punto_G.jpg}
+\includegraphics[width=\columnwidth]{Velocidad_Lineal_del_punto_G.jpg}
 \caption{Velocidades de las 8 patas. Las velocidades pico alcanzan valores significativos durante las fases de balanceo.}
 \label{fig:velocidad}
 \end{figure}
@@ -583,7 +583,7 @@ Velocidades características:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Aceleracion_Lineal_del_punto_G.jpg}
+\includegraphics[width=\columnwidth]{Aceleracion_Lineal_del_punto_G.jpg}
 \caption{Aceleraciones de las 8 patas. Los picos de aceleración ocurren durante transiciones críticas del movimiento.}
 \label{fig:aceleracion}
 \end{figure}
@@ -651,13 +651,6 @@ Para cada eslabón $i$ del mecanismo, se aplican las siguientes fuerzas y moment
 \item $\vec{W}_i = m_i g$: Peso del eslabón (actuando en el centro de masa)
 \item $M_i$: Momento aplicado (solo en la manivela)
 \end{itemize}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/diagrama_cuerpo_libre.png}
-\caption{Diagrama de cuerpo libre de un eslabón genérico mostrando fuerzas de reacción en articulaciones, peso, y aceleración del centro de masa.}
-\label{fig:dcl}
-\end{figure}
 
 \subsubsection{Ecuaciones de Equilibrio Dinámico}
 
@@ -885,7 +878,7 @@ El análisis cinético se realizó en MATLAB considerando un mecanismo de 8 pata
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Torque_requerido_en_el_motor_(8_patas).jpg}
+\includegraphics[width=\columnwidth]{Torque_requerido_en_el_motor_(8_patas).jpg}
 \caption{Torque requerido en el motor para 8 patas con desfase de 45°. Los picos corresponden a posiciones de máxima carga durante el ciclo de marcha.}
 \label{fig:torque}
 \end{figure}
@@ -903,7 +896,7 @@ Resultados numéricos para configuración de 8 patas:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Potencia_instantanea_requerida_(8_patas).jpg}
+\includegraphics[width=\columnwidth]{Potencia_instantanea_requerida_(8_patas).jpg}
 \caption{Potencia instantánea requerida por el motor para las 8 patas. La potencia varía significativamente durante el ciclo de marcha.}
 \label{fig:potencia}
 \end{figure}
@@ -920,7 +913,7 @@ Análisis de potencia:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Fuerza_total_en_articulaciones_(8_patas).jpg}
+\includegraphics[width=\columnwidth]{Fuerza_total_en_articulaciones_(8_patas).jpg}
 \caption{Fuerza total en articulaciones para las 8 patas. Las fuerzas incluyen componentes inerciales y gravitacionales.}
 \label{fig:fuerzas}
 \end{figure}
@@ -1025,26 +1018,6 @@ El diseño del mecanismo se realizó mediante un enfoque modular en SolidWorks:
 \item Rodamientos de motor (2 unidades)
 \end{itemize}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/cad_ensamble_completo.png}
-\caption{Vista isométrica del ensamble completo en SolidWorks. Se observan las dos patas articuladas simétricas y la estructura de soporte central.}
-\label{fig:cad_completo}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/cad_vista_lateral.png}
-\caption{Vista lateral mostrando la cinemática del mecanismo. Los eslabones están en posición de máxima extensión durante la fase de apoyo.}
-\label{fig:cad_lateral}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/cad_vista_superior.png}
-\caption{Vista superior evidenciando la simetría del diseño y la configuración de las patas a ambos lados del eje motor central.}
-\label{fig:cad_superior}
-\end{figure}
 
 \subsection{Justificación de Geometría}
 
@@ -1168,13 +1141,6 @@ El eje del motor se conecta directamente a la manivela mediante:
 \item Fijación con prisionero M3 para transmisión de torque
 \end{enumerate}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/cad_sistema_transmision.png}
-\caption{Sistema de transmisión mostrando motor, acoplador y rodamientos de soporte del eje principal.}
-\label{fig:transmision}
-\end{figure}
-
 \subsubsection{Verificación de Capacidad}
 
 Factor de seguridad del motor:
@@ -1269,13 +1235,6 @@ Se generaron planos de fabricación con:
 \item Secuencia de montaje numerada
 \end{itemize}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/plano_eslabon_principal.png}
-\caption{Plano técnico de eslabón principal con dimensiones acotadas y tolerancias de fabricación.}
-\label{fig:plano}
-\end{figure}
-
 \vspace{9pt}
 
 \section{Resultados de Simulaciones}
@@ -1309,13 +1268,6 @@ Gravedad & 981 cm/s² \\
 
 \subsubsection{Trayectoria del Pie}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/trayectoria_completa_8patas.png}
-\caption{Trayectorias completas de los 8 pies durante un ciclo. Cada pata sigue una trayectoria similar pero desfasada 45°.}
-\label{fig:sim_trayectoria}
-\end{figure}
-
 Características de la trayectoria obtenida:
 
 \begin{table}[H]
@@ -1337,13 +1289,6 @@ Número de patas en contacto & 4-6 (dependiendo del ángulo) \\
 
 \subsubsection{Velocidad Horizontal del Pie}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/velocidad_horizontal_8patas.png}
-\caption{Velocidad horizontal de los 8 pies. Las velocidades alcanzan picos de 94.25 cm/s durante fases de balanceo.}
-\label{fig:sim_vel_horizontal}
-\end{figure}
-
 Velocidades características:
 \begin{itemize}
 \item Velocidad máxima: 94.25 cm/s
@@ -1353,23 +1298,9 @@ Velocidades características:
 
 \subsubsection{Velocidad Vertical del Pie}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/velocidad_vertical_8patas.png}
-\caption{Velocidad vertical de los 8 pies. Durante la fase de apoyo, $v_y \approx 0$ para contacto estable.}
-\label{fig:sim_vel_vertical}
-\end{figure}
-
 \subsection{Análisis de Aceleraciones}
 
 \subsubsection{Aceleración del Punto de Contacto G}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/aceleracion_pie_8patas.png}
-\caption{Aceleraciones de los 8 pies. Los picos de 39,552 cm/s² ocurren durante transiciones de fase.}
-\label{fig:sim_acel_cg}
-\end{figure}
 
 Valores extremos de aceleración:
 \begin{itemize}
@@ -1381,10 +1312,6 @@ Valores extremos de aceleración:
 \subsection{Resultados del Análisis Dinámico}
 
 \subsubsection{Torque Requerido en el Motor}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/torque_motor_8patas.png}
 \caption{Torque requerido en el motor para las 8 patas. Los valores altos (121.60 N·m) reflejan las fuerzas dinámicas del sistema completo.}
 \label{fig:sim_torque}
 \end{figure}
@@ -1417,13 +1344,6 @@ La potencia máxima se calcula considerando el torque pico y la velocidad angula
 P_{max} = T_{max} \cdot \omega_{motor} = 121.60 \cdot 0.122 = 14.80 \text{ W}
 \end{equation}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/potencia_motor_8patas.png}
-\caption{Potencia mecánica requerida. La potencia máxima de 14.80 W determina el dimensionamiento del motor y baterías.}
-\label{fig:sim_potencia}
-\end{figure}
-
 Resultados energéticos para motor DC caja reductora amarilla (200 rpm):
 
 \begin{table}[H]
@@ -1446,30 +1366,9 @@ Potencia eléctrica requerida & 13.7 W \\
 
 \subsubsection{Articulación de la Manivela}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_fuerza_manivela.png}
-\caption{Componentes de fuerza en la articulación manivela-acoplador. La fuerza máxima de 18.5 N determina el dimensionamiento del rodamiento.}
-\label{fig:sim_fuerza_manivela}
-\end{figure}
-
 \subsubsection{Articulación del Balancín Principal}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_fuerza_balancin.png}
-\caption{Fuerza en la articulación del balancín principal (eslabón 6). Esta articulación experimenta las cargas máximas del sistema (24.3 N).}
-\label{fig:sim_fuerza_balancin}
-\end{figure}
-
 \subsection{Fuerza de Reacción del Suelo}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_fuerza_suelo_detallada.png}
-\caption{Fuerza normal del suelo durante la fase de apoyo. El pico inicial (8.2 N) corresponde al impacto del pie, seguido de estabilización en 4.5 N promedio.}
-\label{fig:sim_fuerza_suelo}
-\end{figure}
 
 Factor de impacto:
 
@@ -1499,13 +1398,6 @@ Contacto_{total} = 1 - (1 - 0.55)^2 = 0.7975 \approx 80\%
 Cumple el criterio de estabilidad (80\% > 75\% requerido).
 
 \subsubsection{Variación del Centro de Masa}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_trayectoria_cg.png}
-\caption{Trayectoria del centro de masa del mecanismo completo. La oscilación vertical de ±2.1 cm es relativamente pequeña, favoreciendo un movimiento suave.}
-\label{fig:sim_cg}
-\end{figure}
 
 Oscilación vertical del CG:
 
@@ -1557,13 +1449,6 @@ Energía cinética total del sistema:
 \begin{equation}
 E_k = \sum_{i=1}^{n} \left(\frac{1}{2}m_i v_{Gi}^2 + \frac{1}{2}I_{Gi}\omega_i^2\right)
 \end{equation}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/simulacion_energia.png}
-\caption{Energía cinética total del sistema durante un ciclo. Las oscilaciones muestran la conversión entre energía cinética de traslación y rotación de los eslabones.}
-\label{fig:sim_energia}
-\end{figure}
 
 El balance de energía verifica:
 
@@ -1632,13 +1517,6 @@ Tornillería & M3 & 40 & varios \\
 \item Sellar superficies con sellador acrílico (2 capas)
 \end{enumerate}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/fabricacion_base_mdf.jpg}
-\caption{Base de MDF cortada y sellada. Se observan los orificios para montaje de rodamientos del eje principal.}
-\label{fig:fab_base}
-\end{figure}
-
 \textbf{Corte de Acrílico:}
 \begin{enumerate}
 \item Dibujar plantillas de eslabones en papel
@@ -1646,13 +1524,6 @@ Tornillería & M3 & 40 & varios \\
 \item Cortar con cortadora láser (potencia 60\%, velocidad 10 mm/s)
 \item Verificar dimensiones con calibrador (tolerancia ±0.5 mm)
 \end{enumerate}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/fabricacion_eslabones_acrilico.jpg}
-\caption{Eslabones de acrílico cortados con láser. El corte limpio elimina necesidad de acabado adicional.}
-\label{fig:fab_acrilico}
-\end{figure}
 
 \subsubsection{Fase 2: Fabricación de Uniones (Impresión 3D)}
 
@@ -1677,13 +1548,6 @@ Soportes & Activados (ángulo >45°) \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/fabricacion_impresion_3d.jpg}
-\caption{Piezas de unión impresas en 3D. El relleno de 80\% garantiza resistencia estructural adecuada.}
-\label{fig:fab_3d}
-\end{figure}
-
 Tiempo total de impresión: 18 horas para todas las uniones.
 
 \subsubsection{Fase 3: Preparación de Ejes y Pasadores}
@@ -1703,13 +1567,6 @@ Tiempo total de impresión: 18 horas para todas las uniones.
 \item Instalar rodamientos 608ZZ en extremos
 \item Verificar concentricidad (runout < 0.1 mm)
 \end{enumerate}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/fabricacion_eje_motor.jpg}
-\caption{Eje motor de aluminio con rodamientos instalados. Los prisioneros M3 permiten ajuste de la manivela.}
-\label{fig:fab_eje}
-\end{figure}
 
 \subsection{Proceso de Ensamble}
 
@@ -1733,13 +1590,6 @@ El ensamble se realizó en el siguiente orden para minimizar interferencias:
 \item Verificar rotación suave sin fricción excesiva
 \end{enumerate}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/ensamble_transmision.jpg}
-\caption{Sistema de transmisión ensamblado. Motor DC con reductora 1:20 acoplado al eje principal mediante acoplador flexible.}
-\label{fig:ens_transmision}
-\end{figure}
-
 \textbf{Paso 3: Ensamble de eslabones (pata izquierda)}
 \begin{enumerate}
 \item Conectar manivela (L2) al eje motor
@@ -1748,13 +1598,6 @@ El ensamble se realizó en el siguiente orden para minimizar interferencias:
 \item Lubricar articulaciones con grasa de litio
 \item Verificar rango de movimiento completo sin interferencias
 \end{enumerate}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/ensamble_pata_izquierda.jpg}
-\caption{Pata izquierda ensamblada mostrando la configuración de 8 barras. Se observan las uniones impresas en 3D conectando los eslabones de acrílico.}
-\label{fig:ens_pata_izq}
-\end{figure}
 
 \textbf{Paso 4: Ensamble de pata derecha}
 \begin{enumerate}
@@ -1769,13 +1612,6 @@ El ensamble se realizó en el siguiente orden para minimizar interferencias:
 \item Verificar altura uniforme de todas las patas
 \item Ajustar con arandelas si es necesario para nivelar
 \end{enumerate}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/ensamble_completo.jpg}
-\caption{Mecanismo completamente ensamblado. Vista general mostrando simetría de las patas y sistema de transmisión central.}
-\label{fig:ens_completo}
-\end{figure}
 
 \subsection{Desafíos Encontrados y Soluciones}
 
@@ -1809,13 +1645,6 @@ El ensamble se realizó en el siguiente orden para minimizar interferencias:
 \end{itemize}
 
 \textbf{Resultado:} Rigidez aumentada 3.5×, deflexión < 1 mm bajo carga máxima.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{figures/solucion_refuerzo_eslabon.jpg}
-\caption{Eslabón largo reforzado con nervaduras en configuración de doble T. Las nervaduras aumentan significativamente la rigidez sin incrementar peso excesivamente.}
-\label{fig:refuerzo}
-\end{figure}
 
 \subsubsection{Problema 3: Desalineación del Eje Motor}
 
@@ -1880,13 +1709,6 @@ El ensamble se realizó en el siguiente orden para minimizar interferencias:
 \subsubsection{Documentación Fotográfica del Proceso}
 
 Se documentó cada etapa del proceso constructivo para referencia futura:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/proceso_completo_montaje.jpg}
-\caption{Secuencia fotográfica del proceso de ensamble desde componentes individuales hasta mecanismo completo.}
-\label{fig:proceso}
-\end{figure}
 
 \subsection{Verificación de Especificaciones Finales}
 
@@ -2011,13 +1833,6 @@ El error del 5.6\% es atribuible principalmente a:
 
 \textbf{Resultados:}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/prueba_analisis_contacto.png}
-\caption{Análisis de video mostrando el número de patas en contacto con el suelo durante un ciclo completo. La zona sombreada indica fase con contacto simultáneo de ambas patas.}
-\label{fig:prueba_contacto}
-\end{figure}
-
 \begin{table}[H]
 \centering
 \caption{Estadísticas de Contacto con el Suelo}
@@ -2059,13 +1874,6 @@ La mayor estabilidad experimental se explica por:
 \end{enumerate}
 
 \textbf{Resultados:}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/prueba_consumo_energia.png}
-\caption{Potencia eléctrica consumida durante operación continua. Las oscilaciones corresponden a las variaciones de torque durante el ciclo.}
-\label{fig:prueba_potencia}
-\end{figure}
 
 \begin{table}[H]
 \centering
@@ -2120,13 +1928,6 @@ Este valor corresponde al torque RMS predicho en la simulación, validando el mo
 \subsubsection{Trayectoria Real del Pie}
 
 Se utilizó software de tracking de video (Tracker) para analizar la trayectoria real:
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/prueba_trayectoria_real.png}
-\caption{Comparación entre trayectoria simulada (línea continua) y trayectoria experimental (puntos rojos) obtenida mediante análisis de video.}
-\label{fig:prueba_trayectoria_comp}
-\end{figure}
 
 \textbf{Diferencias observadas:}
 \begin{itemize}
@@ -2270,13 +2071,6 @@ Creatividad (15\%) & 13/15 \\
 \item "Construcción prolija, buen acabado"
 \item "Se sugiere mejorar velocidad de avance"
 \end{itemize}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/competencia_accion.jpg}
-\caption{Mecanismo durante la competencia oficial recorriendo la pista de 1.5 m. Se observa movimiento estable sin volcamiento ni saltos excesivos.}
-\label{fig:competencia}
-\end{figure}
 
 \vspace{9pt}
 
