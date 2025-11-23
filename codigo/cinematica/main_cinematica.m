@@ -84,6 +84,23 @@ grid on;
 legend(arrayfun(@(x) sprintf('Pata %d',x), 1:n_patas, 'UniformOutput', false));
 hold off;
 
+% === RESUMEN PARA INFORME ===
+xG = trayectorias_G(:,1,:); yG = trayectorias_G(:,2,:);
+xGmax = max(xG(:)); xGmin = min(xG(:));
+yGmax = max(yG(:)); yGmin = min(yG(:));
+v_mod = sqrt(sum(velocidades_G.^2,2));
+vmax = max(v_mod(:)); vmin = min(v_mod(:));
+a_mod = sqrt(sum(aceleraciones_G.^2,2));
+amax = max(a_mod(:)); amin = min(a_mod(:));
+
+fprintf('--- Resumen cinemático Theo Jansen ---\n');
+fprintf('Recorrido X de G: %.2f cm a %.2f cm\n', xGmin, xGmax);
+fprintf('Recorrido Y de G: %.2f cm a %.2f cm\n', yGmin, yGmax);
+fprintf('Velocidad máxima de G: %.2f cm/s\n', vmax);
+fprintf('Velocidad mínima de G: %.2f cm/s\n', vmin);
+fprintf('Aceleración máxima de G: %.2f cm/s^2\n', amax);
+fprintf('Aceleración mínima de G: %.2f cm/s^2\n', amin);
+
 % ================= SUBFUNCIONES INTERNAS =================
 function puntos = calcular_posiciones(theta_OA, O, C, D, L_OA, L_AB, L_BF, L_BC, L_DE, L_EF, L_FG, L_EG)
     A = O + L_OA*[cos(theta_OA), sin(theta_OA)];
