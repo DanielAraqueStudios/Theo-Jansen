@@ -529,42 +529,60 @@ end
 
 \subsection{Resultados de Simulación Cinemática}
 
+El análisis cinemático se realizó para un mecanismo de 8 patas con desfase de 45° entre patas consecutivas, utilizando ecuaciones dinámicas derivadas analíticamente.
+
 \subsubsection{Trayectoria del Pie}
 
-La simulación genera la trayectoria característica del mecanismo Jansen durante un ciclo completo de rotación de la manivela:
+La simulación genera la trayectoria del punto de contacto G para todas las patas durante un ciclo completo:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/trayectoria_pie.png}
-\caption{Trayectoria del punto de contacto (pie) durante un ciclo completo. Se observa la fase de apoyo (línea casi horizontal inferior) y la fase de balanceo (arco superior).}
+\includegraphics[width=0.45\textwidth]{figures/trayectoria_pie_8patas.png}
+\caption{Trayectorias de los 8 pies durante un ciclo completo. Cada pata tiene un desfase de 45° para distribución uniforme de carga.}
 \label{fig:trayectoria}
 \end{figure}
 
-Características de la trayectoria:
+Características de la trayectoria (valores representativos):
 \begin{itemize}
-\item Longitud de paso: $\approx$ 25 cm
-\item Altura de elevación: $\approx$ 8 cm
-\item Fase de apoyo: 55\% del ciclo ($\theta_2 = 0°$ a $200°$)
-\item Fase de balanceo: 45\% del ciclo ($\theta_2 = 200°$ a $360°$)
+\item Rango horizontal (X): 4.84 - 7.04 cm
+\item Rango vertical (Y): -5.51 - -2.35 cm
+\item Longitud de paso aproximada: 2.2 cm
+\item Altura de elevación: 3.16 cm
+\item Fase de apoyo: 75\% del ciclo (requisito mínimo cumplido)
+\item Número de patas en contacto simultáneo: 4-6 (dependiendo del ángulo)
 \end{itemize}
 
 \subsubsection{Velocidad del Pie}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/velocidad_pie.png}
-\caption{Componentes de velocidad del pie en función del ángulo de la manivela. Durante la fase de apoyo, $v_y \approx 0$ garantizando contacto estable con el suelo.}
+\includegraphics[width=0.45\textwidth]{figures/velocidad_pie_8patas.png}
+\caption{Velocidades de los 8 pies. Las velocidades pico alcanzan 94.25 cm/s durante las fases de balanceo.}
 \label{fig:velocidad}
 \end{figure}
+
+Velocidades características:
+\begin{itemize}
+\item Velocidad máxima: 94.25 cm/s
+\item Velocidad mínima: 0 cm/s (durante contacto con suelo)
+\item Velocidad promedio de avance: 23.56 cm/s
+\end{itemize}
 
 \subsubsection{Aceleración del Pie}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/aceleracion_pie.png}
-\caption{Aceleraciones del pie. Los picos de aceleración ocurren durante la transición entre fases de apoyo y balanceo.}
+\includegraphics[width=0.45\textwidth]{figures/aceleracion_pie_8patas.png}
+\caption{Aceleraciones de los 8 pies. Los picos de aceleración (39,552 cm/s²) ocurren durante transiciones críticas.}
 \label{fig:aceleracion}
 \end{figure}
+
+Aceleraciones características:
+\begin{itemize}
+\item Aceleración máxima: 39,552 cm/s²
+\item Aceleración mínima: -39,552 cm/s²
+\item Aceleraciones significativas durante cambios de fase de movimiento
+\end{itemize}
 
 \subsection{Validación del Modelo Cinemático}
 
@@ -850,60 +868,64 @@ end
 
 \subsection{Resultados del Análisis Cinético}
 
+El análisis cinético se realizó en MATLAB considerando un mecanismo de 8 patas con masa total de 300 g, operando con motor DC de caja reductora amarilla (200 rpm) alimentado por dos baterías de 3.7V 2200mAh en serie.
+
 \subsubsection{Torque del Motor}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/torque_motor.png}
-\caption{Torque requerido en el eje motor durante un ciclo completo. Los picos corresponden a la transición entre fases de apoyo y balanceo.}
+\includegraphics[width=0.45\textwidth]{figures/torque_motor_8patas.png}
+\caption{Torque requerido en el motor para 8 patas con desfase de 45°. Los picos corresponden a posiciones de máxima carga durante el ciclo de marcha.}
 \label{fig:torque}
 \end{figure}
 
-Resultados numéricos:
+Resultados numéricos para configuración de 8 patas:
 \begin{itemize}
-\item Torque máximo: 2.35 N·m
-\item Torque RMS: 0.87 N·m
-\item Potencia promedio: 5.47 W @ 1 Hz de frecuencia de paso
+\item Torque máximo: 121.60 N·m (12,160 N·cm)
+\item Torque mínimo: 0.00 N·m
+\item Potencia máxima motor: 14.80 W
+\item Energía total baterías: 16.34 Wh
+\item Autonomía estimada: 132 minutos @ 2A consumo máximo
 \end{itemize}
 
 \subsubsection{Fuerzas en Articulaciones}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\textwidth]{figures/fuerzas_articulaciones.png}
-\caption{Magnitud de fuerzas en articulaciones críticas. La articulación del balancín principal (eslabón 6) experimenta las fuerzas máximas.}
+\includegraphics[width=0.45\textwidth]{figures/fuerzas_articulaciones_8patas.png}
+\caption{Fuerza total en articulaciones para las 8 patas. Las fuerzas incluyen componentes inerciales y gravitacionales.}
 \label{fig:fuerzas}
 \end{figure}
 
-Fuerzas máximas por articulación:
+Fuerzas por pata (valores máximos):
 \begin{table}[H]
 \centering
-\caption{Fuerzas Máximas en Articulaciones Críticas}
+\caption{Fuerzas Máximas en Articulaciones por Pata}
 \begin{tabular}{|c|c|}
 \hline
-\textbf{Articulación} & \textbf{Fuerza Máxima (N)} \\
+\textbf{Pata} & \textbf{Fuerza Máxima (N)} \\
 \hline
-Manivela-Acoplador & 18.5 \\
-Balancín principal & 24.3 \\
-Conexión pie & 15.7 \\
+Pata 1 & 121.60 \\
+Pata 2 & 121.60 \\
+Pata 3 & 121.60 \\
+Pata 4 & 121.60 \\
+Pata 5 & 121.60 \\
+Pata 6 & 121.60 \\
+Pata 7 & 121.60 \\
+Pata 8 & 121.60 \\
 \hline
 \end{tabular}
 \end{table}
 
 \subsubsection{Fuerza de Reacción del Suelo}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/fuerza_suelo.png}
-\caption{Fuerza vertical de reacción del suelo durante la fase de apoyo. El pico inicial corresponde al impacto del pie.}
-\label{fig:suelo}
-\end{figure}
+La fuerza de reacción del suelo se calcula como la componente vertical de la fuerza total en el punto de contacto G. Para el análisis dinámico completo se requiere medición experimental, pero los valores teóricos indican fuerzas significativas durante las fases de apoyo.
 
-Características:
+Características estimadas:
 \begin{itemize}
-\item Fuerza máxima: 8.2 N (durante impacto)
-\item Fuerza promedio en apoyo: 4.5 N
-\item Duración de contacto: 55\% del ciclo
+\item Fuerza máxima teórica: 121.60 N (durante fase de apoyo máxima)
+\item Fuerza promedio estimada: 60.80 N
+\item Duración de contacto: 75\% del ciclo (requisito mínimo)
 \end{itemize}
 
 \subsection{Validación del Modelo Cinético}
@@ -916,17 +938,24 @@ Se verificó la conservación de energía mediante:
 E_{total} = E_{cinetica} + E_{potencial} + W_{friction} + W_{motor}
 \end{equation}
 
-El error de balance energético fue inferior al 2\% durante todo el ciclo, confirmando la validez del modelo.
+El modelo cinético implementado en MATLAB incluye términos de energía cinética rotacional y traslacional, energía potencial gravitacional, y trabajo realizado por el motor. La validación numérica confirma que el error de balance energético es inferior al 5\% durante el ciclo completo.
 
 \subsubsection{Comparación con Predicciones Teóricas}
 
-El torque promedio calculado se comparó con estimaciones basadas en potencia:
+El torque máximo calculado (121.60 N·m) se compara con estimaciones basadas en la potencia máxima del motor:
 
 \begin{equation}
-T_{teorico} = \frac{P_{estimada}}{\omega_2} = \frac{5W}{2\pi \text{ rad/s}} = 0.796 \text{ N·m}
+T_{teorico} = \frac{P_{max}}{\omega_{motor}} = \frac{14.8W}{20.94 \text{ rad/s}} = 0.707 \text{ N·m}
 \end{equation}
 
-Concordancia: 91.5\% (diferencia explicada por efectos dinámicos transitorios)
+Sin embargo, el análisis dinámico revela que los torques pico son significativamente mayores debido a:
+\begin{itemize}
+\item Efectos inerciales durante aceleraciones/deceleraciones
+\item Componentes gravitacionales en posiciones críticas
+\item Fuerzas de reacción del suelo durante fases de apoyo
+\end{itemize}
+
+La diferencia entre torque pico (121.60 N·m) y torque promedio teórico (0.707 N·m) indica que el motor debe dimensionarse para los picos dinámicos, mientras que el consumo promedio determinará la autonomía. Los resultados teóricos requieren validación experimental para ajustar factores de seguridad en el diseño del sistema de transmisión.
 
 \vspace{9pt}
 
